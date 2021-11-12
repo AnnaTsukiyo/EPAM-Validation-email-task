@@ -19,6 +19,8 @@ This method checks the input string for compliance with the rules for a regular 
 While implementing the method you might need to come up with *regular expressions*. You may consider
 using [regex101.com](https://regex101.com/) to ease designing them.
 
+Note that input value may be null.
+
 You can and should use following methods\classes:
 
 - [`matches`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#matches(java.lang.String))
