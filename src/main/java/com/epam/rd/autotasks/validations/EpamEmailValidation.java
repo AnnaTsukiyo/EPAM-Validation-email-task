@@ -15,7 +15,7 @@ public class EpamEmailValidation {
         if (matcher.matches()) {
             return true;
         } if (email == null || email.isEmpty() || " ".equals(email)){
-            return false;
+            return Boolean.parseBoolean(null);
         }else{
             return false;
         }
