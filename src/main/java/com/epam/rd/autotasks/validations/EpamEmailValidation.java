@@ -8,15 +8,14 @@ public class EpamEmailValidation {
 
     public static boolean validateEpamEmail(String email) {
 
-        String expression = "^[(a-z)]{2,}+(_)+[a-z]+([0-9]?)+@[epam.com]+$";
-        CharSequence inputStr = email;
+        String expression = "^[(a-z)]{2,}+[_]{1}+[a-z]{1,}+([0-9]?)+@epam.com+$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(inputStr);
+        Matcher matcher = pattern.matcher(email);
         if (email == null || email.isEmpty() || email.isBlank()) {
             return false;
         }
-            return matcher.matches();
-        }
+        return matcher.matches();
+    }
 
     public static void main(String args[]) {
         String first = "william_shakespeare@epam.com";
@@ -34,7 +33,7 @@ public class EpamEmailValidation {
         String thirteenth = "william.shakespeare@epam@com";
         String fourteenth = "william.shakespeare@epamcom";
         String fifteenth = " ";
-        for (String s : Arrays.asList(first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelve, thirteenth, fourteenth, fifteenth)) {
+        for (String s : Arrays.asList(second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelve, thirteenth, fourteenth, fifteenth)) {
             System.out.println(validateEpamEmail(s));
         }
     }
