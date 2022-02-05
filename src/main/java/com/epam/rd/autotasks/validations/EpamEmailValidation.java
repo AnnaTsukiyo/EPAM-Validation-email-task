@@ -12,14 +12,11 @@ public class EpamEmailValidation {
         CharSequence inputStr = email;
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(inputStr);
-        if (matcher.matches()) {
-            return true;
-        } if (email == null || email.isEmpty() || " ".equals(email)){
-            return Boolean.parseBoolean(null);
-        }else{
+        if (email == null || email.isEmpty() || email.isBlank()) {
             return false;
         }
-    }
+            return matcher.matches();
+        }
 
     public static void main(String args[]) {
         String first = "william_shakespeare@epam.com";
