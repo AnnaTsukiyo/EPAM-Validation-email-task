@@ -14,10 +14,9 @@ public class EpamEmailValidation {
         Matcher matcher = pattern.matcher(inputStr);
         if (matcher.matches()) {
             return true;
-        }
-        if (email == null || email.isEmpty()) {
-            return false;
-        } else {
+        } if (email == null || email.isEmpty() || " ".equals(email)){
+            throw new NullPointerException();
+        }else{
             return false;
         }
     }
